@@ -1,12 +1,15 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import Image from "next/image";
+import Title from "@components/title";
+import Section from "@components/section";
+import Wrapper from "@components/wrapper";
 
 const Home: NextPage = () => {
   return (
-    <div>
-      <h1 className="text-xl">Hey baby</h1>
-    </div>
+    <Section>
+      <Wrapper small>
+        <Title tag="h1">Hey baby</Title>
+      </Wrapper>
+    </Section>
   );
 };
 
