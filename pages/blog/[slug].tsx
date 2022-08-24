@@ -18,37 +18,45 @@ const Post: NextPage<PostType> = ({ frontMatter, content }) => {
   return (
     <Section tag="main">
       <Wrapper small>
+        <Link href="/">
+          <a className="underline underline-offset-4 decoration-2 decoration-slate-400 mb-12 inline-block">
+            &larr; Back Home
+          </a>
+        </Link>
+
         <Title tag="h1">{frontMatter.title}</Title>
-        <ReactMarkdown
-          components={{
-            img: ({ node, ...props }) => (
-              <Image
-                alt={props.alt || ""}
-                src={props.src || ""}
-                layout="responsive"
-                width={728}
-                height={410}
-                objectFit="cover"
-              />
-            ),
-            a: ({ node, ...props }) => {
-              const externalLink = props.href?.startsWith("http");
-              return externalLink ? (
-                <a
-                  href={props.href || "/"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {props.children[0]}
-                </a>
-              ) : (
-                <Link href={props.href || "/"}>{props.children[0]}</Link>
-              );
-            },
-          }}
-        >
-          {content}
-        </ReactMarkdown>
+        <div className="blog">
+          <ReactMarkdown
+            components={{
+              img: ({ node, ...props }) => (
+                <Image
+                  alt={props.alt || ""}
+                  src={props.src || ""}
+                  layout="responsive"
+                  width={672}
+                  height={354}
+                  objectFit="cover"
+                />
+              ),
+              a: ({ node, ...props }) => {
+                const externalLink = props.href?.startsWith("http");
+                return externalLink ? (
+                  <a
+                    href={props.href || "/"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {props.children[0]}
+                  </a>
+                ) : (
+                  <Link href={props.href || "/"}>{props.children[0]}</Link>
+                );
+              },
+            }}
+          >
+            {content}
+          </ReactMarkdown>
+        </div>
       </Wrapper>
     </Section>
   );

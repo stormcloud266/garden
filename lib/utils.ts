@@ -3,7 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 
 export const slugFromFilename = (filename: string) => {
-  return filename.replace(".mdx", "");
+  return filename.replace(".md", "");
 };
 
 export const getPostFrontMatter = (filename: string) => {
@@ -33,7 +33,7 @@ export const getAllPostsFrontmatter = () => {
 };
 
 export const getPostDataBySlug = (slug: string) => {
-  const filename = slug + ".mdx";
+  const filename = slug + ".md";
   const meta = fs.readFileSync(path.join("posts", filename));
   const { data, content } = matter(meta);
 

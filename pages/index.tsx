@@ -10,7 +10,7 @@ const Home: NextPage<PostsFrontMatterType> = ({ posts }) => {
   return (
     <Section>
       <Wrapper small>
-        <Title tag="h1">Hey baby</Title>
+        <Title tag="h1">Welcome to the Garden</Title>
         <div>
           {posts.map(({ slug, frontMatter }) => (
             <Link key={slug} href={`/blog/${slug}`}>
