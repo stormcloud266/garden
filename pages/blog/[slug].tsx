@@ -1,7 +1,10 @@
+import { NextPage } from "next";
+import Head from "next/head";
+import ReactMarkdown from "react-markdown";
+
 import { PostType } from "@lib/types";
 import { getAllSlugs, getPostDataBySlug } from "@lib/utils";
-import { NextPage } from "next";
-import ReactMarkdown from "react-markdown";
+
 import Title from "@components/title";
 import Section from "@components/section";
 import HomeLink from "@components/home-link";
@@ -16,8 +19,11 @@ interface PageParams {
 const Post: NextPage<PostType> = ({ frontMatter, content }) => {
   return (
     <Section tag="main">
+      <Head>
+        <title>{frontMatter.title}</title>
+      </Head>
       <HomeLink />
-      <Title tag="h1">{frontMatter.title}</Title>
+      <Title>{frontMatter.title}</Title>
       <div className="blog">
         <ReactMarkdown components={components}>{content}</ReactMarkdown>
       </div>

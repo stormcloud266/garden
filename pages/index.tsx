@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 
 import { getAllPostsFrontMatter } from "@lib/utils";
 import { PostsFrontMatterType } from "@lib/types";
@@ -10,7 +11,10 @@ import PostsList from "@components/posts-list";
 const Home: NextPage<PostsFrontMatterType> = ({ posts }) => {
   return (
     <Section>
-      <Title tag="h1">The Garden 🪴</Title>
+      <Head>
+        <title>The Garden 🪴</title>
+      </Head>
+      <Title>The Garden 🪴</Title>
       <div>
         <p className="mt-6">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
