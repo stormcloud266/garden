@@ -10,7 +10,7 @@ const Wrapper = ({ small, children, ...rest }: WrapperProps) => {
     <div
       {...rest}
       className={clsx("w-full max-w-7xl mx-auto px-4", {
-        "max-w-2xl": small,
+        "max-w-xl": small,
       })}
     >
       {children}
