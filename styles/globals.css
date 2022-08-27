@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply font-body font-light text-base bg-off-white;
+    @apply font-body font-light text-base bg-off-white overflow-x-hidden;
   }
 
   h1,

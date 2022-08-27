@@ -6,7 +6,7 @@ interface SectionProps extends HTMLProps<HTMLDivElement> {
 }
 
 const Section = ({ tag, children, ...rest }: SectionProps) => {
-  const classes = clsx("py-24 md:py-32 lg:py-36");
+  const classes = clsx("pb-24 md:pb-32 lg:pb-36 pt-28 md:pt-36 lg:pt-40");
   switch (tag) {
     case "div":
       return (
