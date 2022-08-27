@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Open+Sans:wght@300;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&display=swap");
+@import url("https://rsms.me/inter/inter.css");
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +7,7 @@
 
 @layer base {
   body {
-    @apply font-body font-light text-base bg-off-white overflow-x-hidden;
+    @apply font-body font-light text-base text-slate-light bg-off-white overflow-x-hidden leading-relaxed tracking-wide;
   }
 
   h1,
@@ -15,11 +16,11 @@
   h4,
   h5,
   h6 {
-    @apply font-title text-slate;
+    @apply font-title text-slate tracking-normal;
   }
 
   a {
-    @apply font-title text-slate underline decoration-burnt underline-offset-2 transition-colors hover:text-burnt;
+    @apply font-title text-slate tracking-normal underline decoration-burnt underline-offset-2 transition-colors hover:text-burnt;
   }
 }
 
@@ -28,8 +29,11 @@
     a {
       @apply no-underline text-burnt hover:text-slate;
     }
+    strong {
+      font-weight: 600;
+    }
     p {
-      @apply mt-5 text-slate-light;
+      @apply mt-5;
     }
     ol,
     ul {

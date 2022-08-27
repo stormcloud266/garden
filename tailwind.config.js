@@ -16,7 +16,7 @@ module.exports = {
       },
       fontFamily: {
         title: ["'Averia Serif Libre'", "serif"],
-        body: ["'Open Sans'", "sans-serif"],
+        body: ["Inter", "sans-serif"],
       },
     },
   },
