@@ -4,6 +4,7 @@ export interface PostFrontMatterType {
     title: string;
     date: string;
     excerpt: string;
+    category: string;
   };
 }
 

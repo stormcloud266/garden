@@ -7,6 +7,10 @@ import { PostsFrontMatterType } from "@lib/types";
 import Link from "next/link";
 
 const Home: NextPage<PostsFrontMatterType> = ({ posts }) => {
+  const categories = [
+    ...new Set(posts.map(({ frontMatter }) => frontMatter.category)),
+  ];
+
   return (
     <Section>
       <Wrapper small>
