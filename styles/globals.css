@@ -1,46 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@700&family=Open+Sans:wght@300;500&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   body {
-    @apply text-lg;
+    @apply font-body font-light text-base bg-off-white;
   }
 
-  .blog p {
-    @apply mt-5;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title text-slate;
   }
 
-  .blog ul,
-  .blog ol {
-    @apply my-5 ml-10;
+  a {
+    @apply font-title text-slate underline decoration-burnt underline-offset-2 transition-colors hover:text-burnt;
   }
+}
 
-  .blog ul {
-    @apply list-disc;
-  }
-  .blog ol {
-    @apply list-decimal;
-  }
-
-  .blog li {
-    @apply mt-3;
-  }
-
-  .blog a {
-    @apply text-orange-600;
-  }
-
-  .blog h2 {
-    @apply text-4xl font-bold mt-12;
-  }
-  .blog h3 {
-    @apply text-3xl font-bold mt-10;
-  }
-
-  .blog h4,
-  .blog h5,
-  .blog h6 {
-    @apply text-2xl font-bold mt-7;
+@layer components {
+  .blog {
+    a {
+      @apply no-underline text-burnt hover:text-slate;
+    }
+    p {
+      @apply mt-5 text-slate-light;
+    }
+    ol,
+    ul {
+      @apply my-5 ml-10;
+    }
+    ul {
+      @apply list-disc;
+    }
+    ol {
+      @apply list-decimal;
+    }
+    li {
+      @apply mt-3 text-slate-light;
+    }
+    h2 {
+      @apply text-4xl mt-12;
+    }
+    h3 {
+      @apply text-3xl mt-10;
+    }
+    h4,
+    h5,
+    h6 {
+      @apply text-2xl mt-7;
+    }
   }
 }
