@@ -24,7 +24,7 @@ const Post: NextPage<PostType> = ({ frontMatter, content }) => {
       </Head>
       <HomeLink />
       <Title>{frontMatter.title}</Title>
-      <div className="blog">
+      <div className="blog mt-8">
         <ReactMarkdown components={components}>{content}</ReactMarkdown>
       </div>
     </Section>

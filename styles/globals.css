@@ -30,7 +30,7 @@
       @apply no-underline text-burnt hover:text-slate;
     }
     strong {
-      font-weight: 600;
+      @apply font-semibold;
     }
     p {
       @apply mt-5;
