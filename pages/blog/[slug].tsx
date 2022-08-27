@@ -18,11 +18,18 @@ const Post: NextPage<PostType> = ({ frontMatter, content }) => {
   return (
     <Section tag="main">
       <Wrapper small>
-        <Link href="/">
-          <a className="underline underline-offset-4 decoration-2 decoration-slate-400 mb-12 inline-block">
-            &larr; Back Home
-          </a>
-        </Link>
+        <div className="relative">
+          <Link href="/">
+            <a className="group mb-12 inline-block absolute no-underline -top-16">
+              <span className="group-hover:-translate-x-0.5 inline-block transition-transform">
+                &larr;
+              </span>
+              <span className="underline decoration-burnt ml-1">
+                let&apos;s go home
+              </span>
+            </a>
+          </Link>
+        </div>
 
         <Title tag="h1">{frontMatter.title}</Title>
         <div className="blog">

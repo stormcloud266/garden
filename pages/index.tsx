@@ -10,11 +10,18 @@ const Home: NextPage<PostsFrontMatterType> = ({ posts }) => {
   return (
     <Section>
       <Wrapper small>
-        <Title tag="h1">Welcome to the Garden</Title>
+        <Title tag="h1">The Garden 🪴</Title>
         <div>
+          <p className="mt-6">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
+            corrupti rerum ex numquam nemo similique eius molestiae deleniti,
+            sint veniam laudantium? Rem, magnam aspernatur!
+          </p>
+        </div>
+        <div className="mt-7 flex flex-col items-start">
           {posts.map(({ slug, frontMatter }) => (
             <Link key={slug} href={`/blog/${slug}`}>
-              {frontMatter.title}
+              <a className="mt-2 inline-block text-lg">{frontMatter.title}</a>
             </Link>
           ))}
         </div>
