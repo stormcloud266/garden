@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { PostFrontMatterType, PostsFrontMatterType } from "./types";
 
 export const slugFromFilename = (filename: string) => {
   return filename.replace(".md", "");
@@ -21,7 +22,7 @@ export const getAllSlugs = () => {
   return files.map((filename) => slugFromFilename(filename));
 };
 
-export const getAllPostsFrontmatter = () => {
+export const getAllPostsFrontMatter = () => {
   const files = getAllFiles();
 
   const posts = files.map((filename) => ({
@@ -42,4 +43,8 @@ export const getPostDataBySlug = (slug: string) => {
     frontMatter: data,
     content,
   };
+};
+
+export const getUniqueCategories = (posts: PostFrontMatterType[]) => {
+  return [...new Set(posts.map(({ frontMatter }) => frontMatter.category))];
 };

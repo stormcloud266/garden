@@ -1,18 +1,8 @@
 import { HTMLProps } from "react";
-import clsx from "clsx";
 
-interface WrapperProps extends HTMLProps<HTMLDivElement> {
-  small?: boolean;
-}
-
-const Wrapper = ({ small, children, ...rest }: WrapperProps) => {
+const Wrapper = ({ children, ...rest }: HTMLProps<HTMLDivElement>) => {
   return (
-    <div
-      {...rest}
-      className={clsx("w-full max-w-7xl mx-auto px-4", {
-        "max-w-xl": small,
-      })}
-    >
+    <div {...rest} className="w-full max-w-xl mx-auto px-4">
       {children}
     </div>
   );
