@@ -6,6 +6,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        fade: {
+          "0%": { opacity: "0%" },
+          "100%": { opacity: "100%" },
+        },
+      },
+      animation: {
+        fade: "fade .2s ease-in-out forwards",
+      },
       colors: {
         slate: {
           DEFAULT: "#3d4958",

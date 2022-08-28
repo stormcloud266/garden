@@ -4,11 +4,12 @@ import ReactMarkdown from "react-markdown";
 
 import { PostType } from "@lib/types";
 import { getAllSlugs, getPostDataBySlug } from "@lib/utils";
+import components from "@lib/markdown-components";
 
 import Title from "@components/title";
 import Section from "@components/section";
 import HomeLink from "@components/home-link";
-import components from "@lib/markdown-components";
+import Tag from "@components/tag";
 
 interface PageParams {
   params: {
@@ -22,10 +23,15 @@ const Post: NextPage<PostType> = ({ frontMatter, content }) => {
       <Head>
         <title>{frontMatter.title}</title>
       </Head>
-      <HomeLink />
-      <Title>{frontMatter.title}</Title>
-      <div className="blog mt-8">
-        <ReactMarkdown components={components}>{content}</ReactMarkdown>
+
+      <div className="animate-fade relative">
+        <HomeLink />
+        <Title>{frontMatter.title}</Title>
+        <Tag>{frontMatter.category}</Tag>
+
+        <div className="blog mt-14">
+          <ReactMarkdown components={components}>{content}</ReactMarkdown>
+        </div>
       </div>
     </Section>
   );

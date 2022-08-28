@@ -14,15 +14,17 @@ const Home: NextPage<PostsFrontMatterType> = ({ posts }) => {
       <Head>
         <title>The Garden 🪴</title>
       </Head>
-      <Title>The Garden 🪴</Title>
-      <div>
-        <p className="mt-6">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-          corrupti rerum ex numquam nemo similique eius molestiae deleniti, sint
-          veniam laudantium? Rem, magnam aspernatur!
-        </p>
+      <div className="animate-fade">
+        <Title>The Garden 🪴</Title>
+        <div>
+          <p className="mt-6">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
+            corrupti rerum ex numquam nemo similique eius molestiae deleniti,
+            sint veniam laudantium? Rem, magnam aspernatur!
+          </p>
+        </div>
+        <PostsList posts={posts} />
       </div>
-      <PostsList posts={posts} />
     </Section>
   );
 };
