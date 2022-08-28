@@ -21,7 +21,10 @@ module.exports = {
           light: "#405064",
         },
         "off-white": "#fff8f0",
-        burnt: "#b2675e",
+        burnt: {
+          DEFAULT: "#b2675e",
+          dark: "#7e4741",
+        },
       },
       fontFamily: {
         title: ["'Averia Serif Libre'", "serif"],
