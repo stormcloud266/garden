@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 
-import { getAllPostsFrontMatter } from "@lib/utils";
+import { getAllPostsFrontMatter, sortByDate } from "@lib/utils";
 import { PostsFrontMatterType } from "@lib/types";
 
 import Title from "@components/title";
@@ -33,6 +33,6 @@ export async function getStaticProps() {
   const posts = getAllPostsFrontMatter();
 
   return {
-    props: { posts },
+    props: { posts: sortByDate(posts) },
   };
 }

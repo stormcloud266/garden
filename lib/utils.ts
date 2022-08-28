@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { PostFrontMatterType, PostsFrontMatterType } from "./types";
+import { PostFrontMatterType } from "./types";
 
 export const slugFromFilename = (filename: string) => {
   return filename.replace(".md", "");
@@ -47,4 +47,10 @@ export const getPostDataBySlug = (slug: string) => {
 
 export const getUniqueCategories = (posts: PostFrontMatterType[]) => {
   return [...new Set(posts.map(({ frontMatter }) => frontMatter.category))];
+};
+
+export const sortByDate = (posts: PostFrontMatterType[]) => {
+  return posts.sort((a, b) => {
+    return +new Date(b.frontMatter.date) - +new Date(a.frontMatter.date);
+  });
 };
