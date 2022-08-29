@@ -1,8 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { MarkdownComponentType } from "./types";
+import { CodeProps } from "react-markdown/lib/ast-to-react";
+import CodeHighlight from "@components/code-highlight";
 
 const components = {
+  code: ({ node, inline, className, ...props }: CodeProps) => {
+    const match = /language-(\w+)/.exec(className || "");
+
+    return match ? (
+      <CodeHighlight match={match[1]} {...props} />
+    ) : (
+      <code className={className} {...props} />
+    );
+  },
   img: ({ node, ...props }: MarkdownComponentType<"img">) => (
     <Image
       alt={props.alt || ""}

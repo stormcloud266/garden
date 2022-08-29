@@ -4,7 +4,7 @@ const HomeLink = () => {
   return (
     <div className="relative">
       <Link href="/">
-        <a className="group inline-flex items-center no-underline absolute bottom-5 -left-6">
+        <a className="group inline-flex items-center no-underline absolute bottom-5">
           <span className="group-hover:-translate-x-0.5 mr-2 inline-block transition-transform">
             <svg
               xmlns="http://www.w3.org/2000/svg"
