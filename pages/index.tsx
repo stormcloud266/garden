@@ -8,7 +8,11 @@ import Title from "@components/title";
 import Section from "@components/section";
 import PostsList from "@components/posts-list";
 
-const Home: NextPage<PostsFrontMatterType> = ({ posts }) => {
+interface PostsListProps {
+  posts: PostsFrontMatterType;
+}
+
+const Home: NextPage<PostsListProps> = ({ posts }) => {
   return (
     <Section>
       <Head>

@@ -1,16 +1,20 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { PostFrontMatterType } from "./types";
+import { PostFrontMatterType, PostsFrontMatterType } from "./types";
 
-export const slugFromFilename = (filename: string) => {
+export const slugFromFilename = (filename: string): string => {
   return filename.replace(".md", "");
 };
 
 export const getPostFrontMatter = (filename: string) => {
   const meta = fs.readFileSync(path.join("posts", filename));
   const { data } = matter(meta);
-  return data;
+
+  return {
+    slug: slugFromFilename(filename),
+    ...data,
+  } as PostFrontMatterType;
 };
 
 export const getAllFiles = () => {
@@ -24,13 +28,7 @@ export const getAllSlugs = () => {
 
 export const getAllPostsFrontMatter = () => {
   const files = getAllFiles();
-
-  const posts = files.map((filename) => ({
-    slug: slugFromFilename(filename),
-    frontMatter: getPostFrontMatter(filename),
-  }));
-
-  return posts;
+  return files.map((filename) => getPostFrontMatter(filename));
 };
 
 export const getPostDataBySlug = (slug: string) => {
@@ -40,17 +38,17 @@ export const getPostDataBySlug = (slug: string) => {
 
   return {
     slug,
-    frontMatter: data,
     content,
+    ...data,
   };
 };
 
-export const getUniqueCategories = (posts: PostFrontMatterType[]) => {
-  return [...new Set(posts.map(({ frontMatter }) => frontMatter.category))];
+export const getUniqueCategories = (posts: PostsFrontMatterType) => {
+  return [...new Set(posts.map(({ category }) => category))];
 };
 
-export const sortByDate = (posts: PostFrontMatterType[]) => {
+export const sortByDate = (posts: PostsFrontMatterType) => {
   return posts.sort((a, b) => {
-    return +new Date(b.frontMatter.date) - +new Date(a.frontMatter.date);
+    return +new Date(b.date) - +new Date(a.date);
   });
 };

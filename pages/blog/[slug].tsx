@@ -17,17 +17,17 @@ interface PageParams {
   };
 }
 
-const Post: NextPage<PostType> = ({ frontMatter, content }) => {
+const Post: NextPage<PostType> = ({ title, category, content }) => {
   return (
     <Section tag="main">
       <Head>
-        <title>{frontMatter.title}</title>
+        <title>{title}</title>
       </Head>
 
       <div className="animate-fade relative">
         <HomeLink />
-        <Title>{frontMatter.title}</Title>
-        <Tag>{frontMatter.category}</Tag>
+        <Title>{title}</Title>
+        <Tag>{category}</Tag>
 
         <div className="blog mt-14">
           <ReactMarkdown components={components}>{content}</ReactMarkdown>
