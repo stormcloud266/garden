@@ -4,10 +4,11 @@ import { ReactMarkdownProps } from "react-markdown/lib/ast-to-react";
 export interface PostFrontMatterType {
   slug: string;
   frontMatter: {
-    title: string;
-    date: string;
-    excerpt: string;
-    category: string;
+    // title: string;
+    // date: string;
+    // excerpt: string;
+    // category: string;
+    [key: string]: any;
   };
 }
 
