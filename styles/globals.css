@@ -36,7 +36,8 @@
     hr {
       @apply mt-6 border-burnt/20;
     }
-    p {
+    p,
+    pre {
       @apply mt-6;
     }
     ol,
