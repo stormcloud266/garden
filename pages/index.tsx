@@ -22,9 +22,16 @@ const Home: NextPage<PostsListProps> = ({ posts }) => {
         <Title>The Garden 🪴</Title>
         <div>
           <p className="mt-6">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Delectus
-            corrupti rerum ex numquam nemo similique eius molestiae deleniti,
-            sint veniam laudantium? Rem, magnam aspernatur!
+            This is a template for a{" "}
+            <a
+              href="https://maggieappleton.com/garden-history"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              digital garden
+            </a>{" "}
+            or personal blog built with NextJS and Tailwind. Write about your
+            interests, thoughts, and musings in markdown.
           </p>
         </div>
         <PostsList posts={posts} />

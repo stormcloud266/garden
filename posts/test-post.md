@@ -5,9 +5,9 @@ excerpt: my test post
 category: music
 ---
 
-this is my stuff
+This is an example blog post.
 
-![alt maybe](/posts/test.png)
+![alt maybe](/posts/camille-brodard-unsplash.jpg)
 
 Lorem [local link](/) ipsum dolor sit amet consectetur, adipisicing elit. Doloremque magni veniam dignissimos, omnis accusantium corrupti itaque assumenda commodi praesentium fugiat dolorem eaque minus.
 
