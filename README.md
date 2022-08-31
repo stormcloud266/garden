@@ -1,5 +1,7 @@
 # A NextJS Digital Garden
 
+This is a template for a digital garden or personal blog built with NextJS, Tailwind, and markdown, distributed under the BSD license.
+
 ## How to Use
 
 ### Set Up
