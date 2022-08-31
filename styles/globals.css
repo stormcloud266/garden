@@ -7,7 +7,7 @@
 
 @layer base {
   body {
-    @apply font-body font-light text-base text-slate-light bg-off-white overflow-x-hidden leading-relaxed tracking-wide;
+    @apply font-body font-light text-lg text-slate-light bg-off-white overflow-x-hidden leading-relaxed tracking-wide;
   }
 
   h1,
