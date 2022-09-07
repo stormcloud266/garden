@@ -26,3 +26,4 @@ This is a template for a digital garden or personal blog built with NextJS, Tail
 - Features links on homepage
 - All links page
 - Filter by category
+- Meta data, Twitter cards
